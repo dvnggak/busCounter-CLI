@@ -2,6 +2,7 @@ package main;
 
 //LIBRARY UNTUK MENANGKAP INPUT USER
 import java.util.Scanner;
+import java.util.concurrent.Delayed;
 //LIBRARY UNTUK WAKTU (LOCAL TIME) DAN TIME FORMATER
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,10 +15,6 @@ public class app {
         LocalDateTime now = LocalDateTime.now();  
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
         String formatDateTime = now.format(format);  
-        int time = Integer.parseInt(formatDateTime);
-
-
-
         String name ;
         int choose ;
         String address;
@@ -87,8 +84,10 @@ public class app {
         }
 
         //KONDISI LOGIKA WAKTU INTERVAL KETIKA JURUSAN YANG DIPILIH 
-        if (formatDateTime == "17.00.00") {
+        if (formatDateTime == "16:05:00") {
             System.out.println("Anda dapat segera masuk ke unit 1");
+        } else {
+            
         }
 
         //TUTUP METHOD SCANNER
