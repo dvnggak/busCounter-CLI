@@ -6,6 +6,7 @@ import java.util.Scanner;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+
 public class app {
     public static void main(String[] args) {
         //KONFIGURASI LIBRARY
@@ -13,6 +14,7 @@ public class app {
         LocalDateTime now = LocalDateTime.now();  
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
         String formatDateTime = now.format(format);  
+        int time = Integer.parseInt(formatDateTime);
 
 
 
@@ -20,7 +22,6 @@ public class app {
         int choose ;
         String address;
         int money;
-        int cost;
 
         String services [] = {
             "Ampera-Perumnas",
@@ -36,8 +37,6 @@ public class app {
             "kosong",
             "tersedia"
         };
-        
-        
 
         System.out.print("Halo, Selamat datang di Loket Transportasi Daerah Kota Palembang \n ");
 
@@ -68,30 +67,29 @@ public class app {
         //CEK KONDISI INPUT JURUSAN DENGAN JURUSAN YANG ADA
         switch (choose) {
             case 1:
-                address = "Ampera-Perumnas";
+                 //KONFIRMASI INPUT YANG TELAH DI DAPAT
+                System.out.print("Terima Kasih " + name + "anda memilih jurusan : Ampera-Perumnas " + "dan Deposit anda sebesar Rp."+ money);
                 break;
             case 2:
-                address = "Ampera-Bom Baru";
+                System.out.print("Terima Kasih " + name + ", anda memilih jurusan : Ampera-Bom Baru " + "dan Deposit anda sebesar Rp."+ money);
                 break;
             case 3:
-                address = "Ampera-KM";
+                System.out.print("Terima Kasih " + name + ", anda memilih jurusan : Ampera-KM "  + "dan Deposit anda sebesar Rp."+ money);
                 break;
             case 4:
-                address = "Ampera-Bukit Besar";
+                System.out.print("Terima Kasih " + name + ", anda memilih jurusan : Ampera-Bukit Besar "  + "dan Deposit anda sebesar Rp."+ money);
                 break;
             case 5:
-                address = "Ampera-Jakabaring";
+                System.out.print("Terima Kasih " + name + ", anda memilih jurusan : Ampera-Jakabaring "  + "dan Deposit anda sebesar Rp."+ money);
                 break;
-        
             default:
                 break;
         }
 
-        //KONFIRMASI INPUT YANG TELAH DI DAPAT
-        System.out.print("Terima Kasih " + name + "anda memilih jurusan : " + address + "dan Deposit anda sebesar Rp."+ money);
-
-        
-
+        //KONDISI LOGIKA WAKTU INTERVAL KETIKA JURUSAN YANG DIPILIH 
+        if (formatDateTime == "17.00.00") {
+            System.out.println("Anda dapat segera masuk ke unit 1");
+        }
 
         //TUTUP METHOD SCANNER
         input.close();
